@@ -18,9 +18,9 @@ const port = 5000
 
 console.log(process.env.DB_User)
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+// app.get('/', (req, res) => {
+//   res.send('Hello World!')
+// })
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
@@ -66,4 +66,4 @@ client.connect(err => {
 });
 
 
-app.listen(port)
+app.listen(process.env.PORT || port)
